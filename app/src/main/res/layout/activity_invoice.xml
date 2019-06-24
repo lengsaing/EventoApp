@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:src="@drawable/evento"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Thank you for your order."
+        android:textSize="20sp"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <TextView
+        android:id="@+id/orderNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greetingText"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_gravity="left"
+        android:text="Your order number: "
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <TextView
+        android:id="@+id/orderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greetingText"
+        android:layout_toRightOf="@id/orderNumberText"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="1241241"
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_regular"
+        />
+
+    <TextView
+        android:id="@+id/orderDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderNumberText"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="left"
+        android:text="Order date: "
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <TextView
+        android:id="@+id/orderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderNumberText"
+        android:layout_toRightOf="@id/orderDateText"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="10dp"
+        android:text="21/4/2019"
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_regular"
+        />
+
+    <TextView
+        android:id="@+id/orderSummaryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderDateText"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="left"
+        android:text="Order Summary: "
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <TextView
+        android:id="@+id/purchaserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderSummaryTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="left"
+        android:text="Name"
+        android:textSize="14sp"
+        android:fontFamily="@font/lato_regular"
+        />
+
+    <TextView
+        android:id="@+id/quantityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderSummaryTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:text="1x"
+        android:textSize="14sp"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@android:color/darker_gray"
+        />
+
+    <TextView
+        android:id="@+id/ticketPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderSummaryTitle"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
+        android:text="Free"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/discountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/purchaserName"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Discount:"
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <TextView
+        android:id="@+id/discountPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/purchaserName"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:text="- $0"
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_regular"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/discountText"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:text="Total Price:"
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/discountText"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:text="$0"
+        android:textSize="15sp"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/totalPrice"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/lato_black"
+        android:textSize="18sp"
+        android:text="Confirm ticket"
+        android:background="@drawable/btn_main_custom"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

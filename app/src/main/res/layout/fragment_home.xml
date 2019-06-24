@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Popular Events"
+            android:fontFamily="@font/lato_bold"
+            android:layout_marginBottom="20dp"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/popularEventRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:scrollbars="horizontal"
+            android:layout_marginBottom="20dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Categories"
+            android:fontFamily="@font/lato_bold"
+            android:layout_marginBottom="20dp"
+            />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:columnCount="3">
+
+            <ImageButton
+                android:id="@+id/btnTech"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/tech"
+                android:background="@drawable/box"
+                android:scaleType="fitXY"
+                />
+
+            <ImageButton
+                android:id="@+id/btnEducation"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/education"
+                android:background="@drawable/box"
+                android:scaleType="fitXY"
+                />
+
+            <ImageButton
+                android:id="@+id/btnSport"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/sport"
+                android:background="@drawable/box"
+                android:scaleType="fitXY"
+                />
+
+            <ImageButton
+                android:id="@+id/btnBusiness"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/business"
+                android:background="@drawable/box"
+                android:scaleType="fitXY"
+                />
+
+            <ImageButton
+                android:id="@+id/btnArts"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/arts"
+                android:background="@drawable/box"
+                android:scaleType="fitXY"
+                />
+
+            <ImageButton
+                android:id="@+id/btnMusic"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/music"
+                android:background="@drawable/box"
+                android:scaleType="fitXY"
+                />
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="All Events"
+            android:fontFamily="@font/lato_bold"
+            android:layout_marginBottom="20dp"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/allEventsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:layout_marginBottom="20dp">
+         </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

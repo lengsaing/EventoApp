@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/eventImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/dotted"
+            android:layout_marginBottom="10dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="10dp"
+            >
+            <ImageView
+                android:id="@+id/ic_date"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/deadline"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ic_date"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:text="@string/hello_blank_fragment"
+                android:textSize="14sp"
+                android:fontFamily="@font/lato_regular"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="10dp"
+            >
+            <ImageView
+                android:id="@+id/ic_location"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/pin"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/locationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ic_location"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:text="@string/hello_blank_fragment"
+                android:textSize="14sp"
+                android:fontFamily="@font/lato_regular"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="25dp"
+            >
+            <ImageView
+                android:id="@+id/pricetag"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/pricetag"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/pricetag"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:text="@string/hello_blank_fragment"
+                android:textSize="14sp"
+                android:fontFamily="@font/lato_regular"
+                />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:text="Details"
+            android:fontFamily="@font/lato_bold"
+            android:layout_marginBottom="15dp"
+            />
+
+        <TextView
+            android:id="@+id/detailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/lato_regular"
+            android:text="Hello,world"
+            />
+
+        <Button
+            android:id="@+id/btnApply"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/lato_black"
+            android:textSize="18sp"
+            android:text="Register"
+            android:background="@drawable/btn_main_custom"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>

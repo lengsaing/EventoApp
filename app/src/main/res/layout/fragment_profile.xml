@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ProfileFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/gradient_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:src="@drawable/education"
+                app:civ_border_color="#EEEEEE"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"
+                />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="Leng"
+                android:textSize="21sp"
+                android:fontFamily="@font/lato_bold"
+                android:textColor="@android:color/white"
+                />
+
+            <Button
+                android:id="@+id/edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="Edit"
+                android:textSize="14sp"
+                android:fontFamily="@font/lato_bold"
+                android:background="@drawable/btn_main_custom"
+                />
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+        <ImageView
+            android:id="@+id/ic_email"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/message"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ic_email"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:text="lsaing@paragoniu.edu.kh"
+            android:textSize="14sp"
+            android:fontFamily="@font/lato_regular"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+        <ImageView
+            android:id="@+id/ic_address"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/address"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/addressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ic_address"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:text="#24E0, St. 102, Sangkat Psar Depo II, Khan Toul Kork"
+            android:textSize="14sp"
+            android:fontFamily="@font/lato_regular"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+        <ImageView
+            android:id="@+id/ic_phone"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/outgoing_call"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/phoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ic_phone"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:text="023 880 880"
+            android:textSize="14sp"
+            android:fontFamily="@font/lato_regular"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/lato_black"
+        android:textSize="18sp"
+        android:text="LOG OUT"
+        android:background="@drawable/btn_main_custom"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
