@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".ProfileFragment">
+    tools:context=".EditProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="260dp"
         android:background="@drawable/gradient_background">
 
         <LinearLayout
@@ -18,7 +22,7 @@
             android:orientation="vertical">
 
             <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/profile_pic"
+                android:id="@+id/profile_pic_New"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -32,27 +36,28 @@
                 app:civ_shadow_color="#8BC34A"
                 />
 
-            <TextView
-                android:id="@+id/profile_name"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/profilePicEdit"
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="Change Profile Picture"
+                android:textSize="12sp"
+                android:fontFamily="@font/lato_bold"
+                android:background="@drawable/btn_main_custom"
+                />
+
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:text=""
+                android:gravity="center_horizontal"
                 android:textSize="21sp"
                 android:fontFamily="@font/lato_bold"
                 android:textColor="@android:color/white"
-                />
-
-            <Button
-                android:id="@+id/edit_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:text="Edit"
-                android:textSize="14sp"
-                android:fontFamily="@font/lato_bold"
-                android:background="@drawable/btn_main_custom"
                 />
         </LinearLayout>
     </FrameLayout>
@@ -71,18 +76,47 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             />
-        <TextView
-            android:id="@+id/emailText"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/ic_email"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="30dp"
             android:layout_centerVertical="true"
-            android:text=""
+            android:hint="Email"
+            android:gravity="center_horizontal"
             android:textSize="14sp"
             android:fontFamily="@font/lato_regular"
             />
     </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp">
+            <ImageView
+                android:id="@+id/ic_pwd"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/padlock"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <EditText
+                android:id="@+id/pwdEditText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ic_pwd"
+                android:layout_marginLeft="30dp"
+                android:layout_centerVertical="true"
+                android:hint="Password"
+                android:gravity="center_horizontal"
+                android:textSize="14sp"
+                android:fontFamily="@font/lato_regular"
+                />
+        </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -98,14 +132,15 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             />
-        <TextView
-            android:id="@+id/addressText"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/addressEditText"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/ic_address"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="30dp"
             android:layout_centerVertical="true"
-            android:text=""
+            android:hint="Address"
+            android:gravity="center_horizontal"
             android:textSize="14sp"
             android:fontFamily="@font/lato_regular"
             />
@@ -124,21 +159,22 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             />
-        <TextView
-            android:id="@+id/phoneText"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/ic_phone"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="30dp"
             android:layout_centerVertical="true"
-            android:text=""
+            android:hint="Phone Number"
+            android:gravity="center_horizontal"
             android:textSize="14sp"
             android:fontFamily="@font/lato_regular"
             />
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btn_logout"
+        android:id="@+id/btnSave"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
@@ -148,8 +184,9 @@
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/lato_black"
         android:textSize="18sp"
-        android:text="LOG OUT"
+        android:text="Save Changes"
         android:background="@drawable/btn_main_custom"
         android:textColor="@android:color/white" />
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

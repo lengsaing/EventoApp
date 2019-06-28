@@ -62,6 +62,7 @@ public class PostActivity extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                currentUser = mAuth.getCurrentUser();
                 if(currentUser == null){
                     startActivity(new Intent(PostActivity.this, AuthenticateActivity.class));
                 }
@@ -180,7 +181,6 @@ public class PostActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        currentUser = mAuth.getCurrentUser();
         mAuth.addAuthStateListener(mAuthListener);
     }
 }

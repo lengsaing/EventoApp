@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.auth.AuthUI;
@@ -41,9 +42,6 @@ public class ProfileFragment extends Fragment {
     TextView phoneText;
     Button btn_logout;
 
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    private FirebaseUser currentUser;
     private DatabaseReference mDatabase;
 
     public ProfileFragment() {
@@ -57,16 +55,6 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(currentUser == null){
-                    startActivity(new Intent(getContext(), AuthenticateActivity.class));
-                }
-            }
-        };
-
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         profile_pic = view.findViewById(R.id.profile_pic);
@@ -79,6 +67,13 @@ public class ProfileFragment extends Fragment {
 
         getUserInfo();
 
+        edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), EditProfileActivity.class));
+            }
+        });
+
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +82,12 @@ public class ProfileFragment extends Fragment {
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             public void onComplete(@NonNull Task<Void> task) {
                                 // user is now signed out
-                                startActivity(new Intent(getContext(), AuthenticateActivity.class));
+                                if(task.isSuccessful()) {
+                                    startActivity(new Intent(getContext(), AuthenticateActivity.class));
+                                }
+                                else{
+                                    Toast.makeText(getContext(), "Log out unsuccessfully! Please try again.", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
             }
@@ -97,6 +97,9 @@ public class ProfileFragment extends Fragment {
     }
 
     private void getUserInfo() {
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
         Query query = mDatabase.child(mAuth.getCurrentUser().getUid());
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -121,14 +124,4 @@ public class ProfileFragment extends Fragment {
             }
         });
     }
-
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        currentUser = mAuth.getCurrentUser();
-        Log.i("FIREBASEUSER", "user ID: "+currentUser.getUid());
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
 }

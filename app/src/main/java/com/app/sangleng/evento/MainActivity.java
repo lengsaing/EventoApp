@@ -31,8 +31,14 @@ public class MainActivity extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(currentUser == null){
+                currentUser = mAuth.getCurrentUser();
+                if (currentUser != null) {
+                    // User is signed in
+                    String UserId = currentUser.getUid();
+                }
+                else {
                     startActivity(new Intent(MainActivity.this, AuthenticateActivity.class));
+                    finish();
                 }
             }
         };
@@ -77,8 +83,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        currentUser = mAuth.getCurrentUser();
         mAuth.addAuthStateListener(mAuthListener);
-
     }
 }

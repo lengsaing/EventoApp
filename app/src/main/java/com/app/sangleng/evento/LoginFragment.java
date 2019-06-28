@@ -39,7 +39,6 @@ public class LoginFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,7 +60,6 @@ public class LoginFragment extends Fragment {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-
                 if(currentUser != null){
                     startActivity(new Intent(getActivity(), MainActivity.class));
                 }
@@ -82,8 +80,15 @@ public class LoginFragment extends Fragment {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(!task.isSuccessful())
+                    if(!task.isSuccessful()) {
+                        Toast.makeText(getActivity(), "Logged in unsuccessfully! Please Try Again.", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
                         Toast.makeText(getActivity(), "Logged in successfully!", Toast.LENGTH_SHORT).show();
+                        currentUser = mAuth.getCurrentUser();
+                        Log.i("mAuth", "user in LoginFragment: "+ currentUser.getUid());
+                        startActivity(new Intent(getActivity(), MainActivity.class));
+                    }
                 }
             });
         }
